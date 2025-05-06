@@ -25,13 +25,12 @@ form.addEventListener("submit", (e) => {
                 alert("Please enter a valid city name");
                 return;
             }
-            const { main, weather, wind, name,sys } = res; // Destructuring the response object to get the main, weather, wind, and name properties
+            const { main, wind, name,sys } = res; // Destructuring the response object to get the main, weather, wind, and name properties
             
             const weatherObj = {
                 name,
                 temp: main.temp,
                 country: sys.country,
-                weather : weather.Clouds,
                 wind: wind.speed
             }
             let data=JSON.parse(localStorage.getItem("weatherData")) || [] // Getting the data from local storage
@@ -49,7 +48,6 @@ function displayWeatherDetails(data) {
         <h2>City: ${data.name}</h2>
         <p>Temperature: ${data.temp}°C</p>
         <p>Country: ${data.country}</p>
-        <p>Weather: ${data.weather}</p>
         <p>Wind Speed: ${data.wind} m/s</p>
         
     `
