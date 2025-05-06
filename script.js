@@ -25,7 +25,7 @@ form.addEventListener("submit", (e) => {
                 alert("Please enter a valid city name");
                 return;
             }
-            const { main, wind, name,sys } = res; // Destructuring the response object to get the main, weather, wind, and name properties
+            const { main, wind, name,sys } = res; // Destructuring the response object to get the main, weather 12 and name properties
             
             const weatherObj = {
                 name,
